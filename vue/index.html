@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vue Practice</title>
+		<link rel="stylesheet" href="./assets/css/styles.css">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div class="margin" id="app">
+			<h1 v-once>{{title}}</h1>
+			<p>The red title is rendered only once</p>
+
+			<hr>
+
+			<label for="userInput">Enter Text:
+				<input type="text" name="userInput" id="userInput" v-on:input="changeTitle">				
+			</label>
+			<p>{{title}}</p>
+
+			<p>Testing links:</p>
+			<a v-bind:href="link" target="_blank">Google</a>
+		</div>
+
+		<div class="margin" id="exerciseDisplayData">
+			<p>VueJs is pretty cool - {{ name }}, {{ age }}</p>
+			<p>{{ age }} * {{ multiplier }} = {{ multiplyAge() }}</p>
+			<p>Random number between 0 and 1 = {{ generateRandomNum() }}</p>
+
+			<div>
+				<label for="firstName">Pre-populated Input Name:
+					<input type="text" id="firstName" name="firstName" v-bind:value="name">
+				</label>
+			</div>
+		</div>
+
+		<div class="margin" id="exerciseEvents">
+			<div>
+				<button v-on:click="alertUser()">Click to Alert</button>
+			</div>
+
+			<div>
+				<label for="keydownInput">Keydown Event:
+					<input type="text" name="keydownInput" id="keydownInput" v-on:keydown="value =  $event.target.value">
+				</label>
+				<p>{{ value }}</p>
+			</div>
+
+			<div>
+				<label for="keydownInputEnter">Keydown Event if Enter is Pressed:
+					<input type="text" name="keydownInputEnter" id="keydownInputEnter" v-on:keydown.enter="value = $event.target.value">
+				</label>
+				<p>{{ value }}</p>
+			</div>
+
+			<div>
+				<button @click="increase()">Click to increase</button>
+				<button v-on:click="reset()">Click to reset</button>
+
+				<p>Current Value: {{ counter }}</p>
+				<p>Result: {{ result }}</p>
+			</div>
+
+		</div>
+
+
+
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+h1 {
+	color: red;
+}
+
+#exerciseDisplayData {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+.margin {
+	margin-top: 20px;
+}
+.margin div {
+	margin-top: 20px;
+}
